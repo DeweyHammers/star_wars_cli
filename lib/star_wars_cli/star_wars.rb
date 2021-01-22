@@ -2,8 +2,10 @@ class StarWars
     def self.list_names(input)
         case input
         when "1"
-            Api.save_people()
-            People.all.map {|person| person.name}
+            Api.save_people() if People.all.length == 0
+            People.all.map.with_index do |person, index| 
+                puts "#{index}. #{person.name}"
+            end
         when "2"
             puts Planets.new("Earth").name
         when "3"
