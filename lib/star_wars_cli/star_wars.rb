@@ -1,26 +1,40 @@
 class StarWars
-    def self.list_names(input)
+    def self.get_category(input)
         case input
         when "1"
             Api.save_people() if People.all.length == 0
-            People.all.map.with_index do |person, index| 
-                puts "#{index}. #{person.name}"
+            People.all.map.with_index(1) do |person, index| 
+                "#{index}. #{person.name}"
             end
         when "2"
-            puts Planets.new("Earth").name
+            Api.save_planets() if Planets.all.length == 0
+            Planets.all.map.with_index(1) do |planet, index| 
+                "#{index}. #{planet.name}"
+            end
         when "3"
-            puts Films.new("New Hope").name
+            Api.save_films() if Films.all.length == 0
+            Films.all.map.with_index(1) do |film, index| 
+                "#{index}. #{film.title}"
+            end
         when "4"
-            puts Species.new("Human").name
+            Api.save_species() if Species.all.length == 0
+            Species.all.map.with_index(1) do |specie, index| 
+                "#{index}. #{specie.name}"
+            end
         when "5"
-            puts Vehicles.new("Land Speeder").name
+            Api.save_vehicles() if Vehicles.all.length == 0
+            Vehicles.all.map.with_index(1) do |vehicle, index| 
+                "#{index}. #{vehicle.name}"
+            end
         when "6"
-            puts Starships.new("Death Star").name
-        when "exit"
-            puts "Good bye!"
-        else
-            puts "invalid command"
-            print "Please enter number: "
+            Api.save_starships() if Starships.all.length == 0
+            Starships.all.map.with_index(1) do |starship, index| 
+                "#{index}. #{starship.name}"
+            end
         end
+    end
+
+    def self.list_info(input)
+        
     end
 end
