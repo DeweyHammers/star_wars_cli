@@ -11,21 +11,14 @@ class Cli
                 print_category_names(list)
                 status = nil
                 while status != true 
-                    input = input = gets.chomp
+                    input = gets.chomp
                     info = StarWars.list_info(input)
                     if info
-                        puts "---------------------"
-                        puts "Movie Information"
-                        puts "---------------------"
-                        puts "Name: #{info.title}"
-                        puts "Episode: #{info.episode_id}"
-                        puts "Director: #{info.director}"
-                        puts "Producer: #{info.producer}"
-                        puts "Release Date: #{info.release_date}"
-                        puts "---------------------"
-                        puts "Please enter a new moive number or 'list' to to see names again or 'back' to go back or 'exit' to exit"
-                        print "Enter a command: "
-                    else 
+                        case StarWars.status
+                        when 'film'
+                            StarWars.print_film_info(info)
+                        end
+                    else
                         if input == 'back'
                             status = true
                             print_categorys()
