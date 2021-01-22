@@ -13,7 +13,7 @@ class StarWars
             end
         when "3"
             Api.save_films() if Films.all.length == 0
-            Films.all.map.with_index(1) do |film, index| 
+            Films.all.map.with_index(1) do |film, index|
                 "#{index}. #{film.title}"
             end
         when "4"
@@ -35,6 +35,13 @@ class StarWars
     end
 
     def self.list_info(input)
-        
+        input = input.to_i
+        film = nil
+        Films.all.map do |index| 
+            if index.url == "http://swapi.dev/api/films/#{input}/"
+                film = index
+            end
+        end
+        film
     end
 end
