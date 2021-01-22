@@ -1,4 +1,6 @@
 class Vehicles
+    attr_reader :num
+
     @@all = []
 
     def initialize(attrs)

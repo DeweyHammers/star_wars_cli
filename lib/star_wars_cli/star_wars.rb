@@ -3,7 +3,7 @@ class StarWars
 
     extend Information
     
-    def self.get_category(input)
+    def self.get_category_names(input)
         case input
         when "1"
             @status = 'person'
@@ -44,16 +44,22 @@ class StarWars
         end
     end
 
-    def self.status
-        @status
-    end
-
-    def self.list_info(input)
+   def self.list_info(input)
         info = nil
         index = input.to_i
         case @status
         when 'person'
+            People.all.map do |person|
+                if person.num == input.to_i
+                    info = person
+                end
+            end
         when 'planet'
+            Planets.all.map do |planet|
+                if planet.url == "http://swapi.dev/api/planets/#{input}/"
+                    info = planet
+                end
+            end
         when 'film'
             Films.all.map do |film| 
                 if film.url == "http://swapi.dev/api/films/#{input}/"
@@ -61,9 +67,28 @@ class StarWars
                 end
             end
         when 'specie'
+            Species.all.map do |specie| 
+                if specie.url == "http://swapi.dev/api/species/#{input}/"
+                    info = specie
+                end
+            end
         when 'vehicle'
+            Vehicles.all.map do |vehicle| 
+                if vehicle.url == "http://swapi.dev/api/vehicles/#{index}/"
+                    info = vehicle
+                end
+            end
         when 'starship'
+            Starships.all.map do |starship| 
+                if starship.url == "http://swapi.dev/api/starships/#{input}/"
+                    info = starship
+                end
+            end
         end
         info
+    end
+
+    def self.status
+        @status
     end
 end

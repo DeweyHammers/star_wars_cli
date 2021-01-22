@@ -6,7 +6,7 @@ class Cli
         input = nil
         while input != "exit" 
             input = gets.chomp
-            list = StarWars.get_category(input)
+            list = StarWars.get_category_names(input)
             if list
                 print_category_names(list)
                 status = nil
@@ -15,8 +15,18 @@ class Cli
                     info = StarWars.list_info(input)
                     if info
                         case StarWars.status
+                        when 'person'
+                            StarWars.print_person_info(info)
+                        when 'planet'
+                            StarWars.print_planet_info(info)
                         when 'film'
                             StarWars.print_film_info(info)
+                        when 'specie'
+                            StarWars.print_specie_info(info)
+                        when 'vehicle'
+                            StarWars.print_vehicle_info(info)
+                        when 'starship'
+                            StarWars.print_starship_info(info)
                         end
                     else
                         if input == 'back'
@@ -52,9 +62,9 @@ class Cli
     end
     
     def print_category_names(list)
-        puts "--------"
+        puts "-----------------------------"
         puts list
-        puts "--------"
+        puts "-----------------------------"
         puts "Please enter a number to choose from the list of names or 'back' to go back or 'exit' to leave the app."
         print "Enter a command: "
     end

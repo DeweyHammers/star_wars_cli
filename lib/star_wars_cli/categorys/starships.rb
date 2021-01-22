@@ -1,4 +1,6 @@
 class Starships
+    attr_reader :num
+
     @@all = []
 
     def initialize(attrs)

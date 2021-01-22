@@ -1,4 +1,6 @@
 class Films
+    attr_reader :num
+
     @@all = []
 
     def initialize(attrs)
