@@ -61,11 +61,37 @@ module Information
         puts "Vehicle Information"
         puts "-----------------------------"
         puts "Name: #{vehicle.name}"
+        puts "Model: #{vehicle.model}"
+        puts "Manufacturer: #{vehicle.manufacturer}"
+        puts "Cost in credits: #{vehicle.cost_in_credits}"
+        puts "Length: #{vehicle.length}"
+        puts "Max atmoshering speed: #{vehicle.max_atmosphering_speed}"
+        puts "Crew: #{vehicle.crew}"
+        puts "Passengers: #{vehicle.passengers}"
+        puts "Cargo capacity: #{vehicle.cargo_capacity}"
+        puts "Consumables: #{vehicle.consumables}"
+        puts "Vehicle class: #{vehicle.vehicle_class}"
         user_commands()
     end
 
     def print_starship_info(starship)
-        
+        puts "-----------------------------"
+        puts "Starship Information"
+        puts "-----------------------------"
+        puts "Name: #{starship.name}"
+        puts "Model: #{starship.model}"
+        puts "Manufacturer: #{starship.manufacturer}"
+        puts "Cost in credits: #{starship.cost_in_credits}"
+        puts "Length: #{starship.length}"
+        puts "Max atmosphering speed: #{starship.max_atmosphering_speed}"
+        puts "Crew: #{starship.crew}"
+        puts "Passengers: #{starship.passengers}"
+        puts "Cargo capacity: #{starship.cargo_capacity}"
+        puts "Consumables: #{starship.consumables}"
+        puts "Hyperdrive rating: #{starship.hyperdrive_rating}"
+        puts "MGLT: #{starship.MGLT}"
+        puts "Starship class: #{starship.starship_class}"
+        user_commands()
     end
 
     def user_commands

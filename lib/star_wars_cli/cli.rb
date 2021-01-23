@@ -45,7 +45,7 @@ class Cli
                 invaild()
             end
         end
-        puts "Good bye!"
+        puts "Good bye! May the force be with you!"
     end 
 
     def print_categorys
