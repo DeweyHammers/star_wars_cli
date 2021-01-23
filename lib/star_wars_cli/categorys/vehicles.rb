@@ -1,6 +1,4 @@
 class Vehicles
-    attr_accessor :num
-
     @@all = []
 
     def initialize(attrs)
@@ -8,7 +6,6 @@ class Vehicles
             self.class.attr_accessor(key)
             self.send(("#{key}="), value)
         end
-        @num = num
         save()
     end
 

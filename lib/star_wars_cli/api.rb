@@ -9,10 +9,9 @@ class Api
             page.map do |key, value|
                 if value.is_a?(Array)
                     value.map do |hash|
-                        people = People.new(hash)
-                        people.num = num_index
+                        hash['num_index'] = num_index
+                        People.new(hash)
                         num_index += 1
-                        people
                     end
                 end
             end
@@ -28,10 +27,9 @@ class Api
             page.map do |key, value|
                 if value.is_a?(Array)
                     value.map do |hash|
-                        planet = Planets.new(hash)
-                        planet.num = num_index
+                        hash['num_index'] = num_index
+                        Planets.new(hash)
                         num_index += 1
-                        planet
                     end
                 end
             end
@@ -45,10 +43,9 @@ class Api
         page.map do |key, value|
             if value.is_a?(Array)
                 value.map do |hash|
-                    film = Films.new(hash)
-                    film.num = num_index
+                    hash['num_index'] = num_index
+                    Films.new(hash)
                     num_index += 1
-                    film
                 end
             end
         end
@@ -62,10 +59,9 @@ class Api
             page.map do |key, value|
                 if value.is_a?(Array)
                     value.map do |hash|
-                        specie = Species.new(hash)
-                        specie.num = num_index
+                        hash['num_index'] = num_index
+                        Species.new(hash)
                         num_index += 1
-                        specie
                     end
                 end
             end
@@ -81,10 +77,9 @@ class Api
             page.map do |key, value|
                 if value.is_a?(Array)
                     value.map do |hash|
-                        vechicle = Vehicles.new(hash)
-                        vechicle.num = num_index
+                        hash['num_index'] = num_index
+                        Vehicles.new(hash)
                         num_index += 1
-                        vechicle
                     end
                 end
             end
@@ -100,10 +95,9 @@ class Api
             page.map do |key, value|
                 if value.is_a?(Array)
                     value.map do |hash|
-                        starship = Starships.new(hash)
-                        starship.num = num_index
+                        hash['num_index'] = num_index
+                        Starships.new(hash)
                         num_index += 1
-                        starship
                     end
                 end
             end

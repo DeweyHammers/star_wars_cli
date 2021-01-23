@@ -1,6 +1,4 @@
 class Planets
-    attr_accessor :num
-
     @@all = []
 
     def initialize(attrs)
@@ -8,7 +6,6 @@ class Planets
             self.class.attr_accessor(key)
             self.send(("#{key}="), value)
         end
-        @num = num
         save()
     end
 

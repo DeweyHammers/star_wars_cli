@@ -1,5 +1,6 @@
 class Cli
-    include UserCommands
+    include UserCommands::InstanceMethods
+    extend UserCommands::ClassMethods
 
     def call
         puts "---------------------------------------------------------------------------"
@@ -19,14 +20,15 @@ class Cli
                     if info
                         StarWars.print_info(info)
                     else
-                        if input == 'back'
+                        case input
+                        when 'back'
                             status = true
                             self.print_categorys()
-                        elsif input == "list"
+                        when "list"
                             self.print_category_names(list)
-                        elsif input == 'exit'
+                        when 'exit'
                             status = true
-                        elsif input != true
+                        else 
                             self.invaild()
                         end
                     end

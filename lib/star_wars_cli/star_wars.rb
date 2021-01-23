@@ -1,43 +1,59 @@
 class StarWars
-    attr_reader :status
-
     extend Information
-    
+
     def self.get_category_names(input)
         case input
         when "1"
-            @status = 'person'
-            Api.save_people() if People.all.length == 0
+            @status = 'People'
+            if People.all.length == 0
+                Cli.loading
+                Api.save_people()
+            end 
             People.all.map.with_index(1) do |person, index| 
                 "#{index}. #{person.name}"
             end
         when "2"
-            @status = 'planet'
-            Api.save_planets() if Planets.all.length == 0
+            @status = 'Planets'
+            if Planets.all.length == 0
+                Cli.loading
+                Api.save_planets() 
+            end
             Planets.all.map.with_index(1) do |planet, index| 
                 "#{index}. #{planet.name}"
             end
         when "3"
-            @status = 'film'
-            Api.save_films() if Films.all.length == 0
+            @status = 'Films'
+            if Films.all.length == 0
+                Cli.loading
+                Api.save_films()
+            end 
             Films.all.map.with_index(1) do |film, index|
                 "#{index}. #{film.title}"
             end
         when "4"
-            @status = 'specie'
-            Api.save_species() if Species.all.length == 0
+            @status = 'Species'
+            if Species.all.length == 0
+                Cli.loading
+                Api.save_species()
+            end 
             Species.all.map.with_index(1) do |specie, index| 
                 "#{index}. #{specie.name}"
             end
         when "5"
-            @status = 'vehicle'
-            Api.save_vehicles() if Vehicles.all.length == 0
+            @status = 'Vehicles'
+            if Vehicles.all.length == 0
+                Cli.loading
+                Api.save_vehicles()
+            end 
             Vehicles.all.map.with_index(1) do |vehicle, index| 
                 "#{index}. #{vehicle.name}"
             end
         when "6"
-            @status = 'starship'
-            Api.save_starships() if Starships.all.length == 0
+            @status = 'Starships'
+            if Starships.all.length == 0
+                Cli.loading
+                Api.save_starships()
+            end 
             Starships.all.map.with_index(1) do |starship, index| 
                 "#{index}. #{starship.name}"
             end
@@ -48,39 +64,39 @@ class StarWars
         info = nil
         index = input.to_i
         case @status
-        when 'person'
+        when 'People'
             People.all.map do |person|
-                if person.num == input.to_i
+                if person.num_index == input.to_i
                     info = person
                 end
             end
-        when 'planet'
+        when 'Planets'
             Planets.all.map do |planet|
-                if planet.num == input.to_i
+                if planet.num_index == input.to_i
                     info = planet
                 end
             end
-        when 'film'
+        when 'Films'
             Films.all.map do |film| 
-                if film.num == input.to_i
+                if film.num_index == input.to_i
                     info = film
                 end
             end
-        when 'specie'
+        when 'Species'
             Species.all.map do |specie| 
-                if specie.num == input.to_i
+                if specie.num_index == input.to_i
                     info = specie
                 end
             end
-        when 'vehicle'
+        when 'Vehicles'
             Vehicles.all.map do |vehicle| 
-                if vehicle.num == input.to_i
+                if vehicle.num_index == input.to_i
                     info = vehicle
                 end
             end
-        when 'starship'
+        when 'Starships'
             Starships.all.map do |starship| 
-                if starship.num == input.to_i
+                if starship.num_index == input.to_i
                     info = starship
                 end
             end
@@ -90,17 +106,17 @@ class StarWars
 
     def self.print_info(info)
         case @status
-        when 'person'
+        when 'People'
             self.print_person_info(info)
-        when 'planet'
+        when 'Planets'
             self.print_planet_info(info)
-        when 'film'
+        when 'Films'
             self.print_film_info(info)
-        when 'specie'
+        when 'Species'
             self.print_specie_info(info)
-        when 'vehicle'
+        when 'Vehicles'
             self.print_vehicle_info(info)
-        when 'starship'
+        when 'Starships'
             self.print_starship_info(info)
         end
     end

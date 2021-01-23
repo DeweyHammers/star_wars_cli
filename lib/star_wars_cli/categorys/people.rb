@@ -1,6 +1,4 @@
 class People
-    attr_accessor :num
-
     @@all = []
 
     def initialize(attrs)
@@ -8,7 +6,6 @@ class People
             self.class.attr_accessor(key)
             self.send(("#{key}="), value)
         end
-        @num = num
         save()
     end
 
