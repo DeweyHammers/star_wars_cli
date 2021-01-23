@@ -44,7 +44,7 @@ class StarWars
         end
     end
 
-   def self.list_info(input)
+   def self.get_info(input)
         info = nil
         index = input.to_i
         case @status
@@ -88,7 +88,20 @@ class StarWars
         info
     end
 
-    def self.status
-        @status
+    def self.print_info(info)
+        case @status
+        when 'person'
+            self.print_person_info(info)
+        when 'planet'
+            self.print_planet_info(info)
+        when 'film'
+            self.print_film_info(info)
+        when 'specie'
+            self.print_specie_info(info)
+        when 'vehicle'
+            self.print_vehicle_info(info)
+        when 'starship'
+            self.print_starship_info(info)
+        end
     end
 end

@@ -15,22 +15,9 @@ class Cli
                 status = nil
                 while status != true 
                     input = gets.chomp
-                    info = StarWars.list_info(input)
+                    info = StarWars.get_info(input)
                     if info
-                        case StarWars.status
-                        when 'person'
-                            StarWars.print_person_info(info)
-                        when 'planet'
-                            StarWars.print_planet_info(info)
-                        when 'film'
-                            StarWars.print_film_info(info)
-                        when 'specie'
-                            StarWars.print_specie_info(info)
-                        when 'vehicle'
-                            StarWars.print_vehicle_info(info)
-                        when 'starship'
-                            StarWars.print_starship_info(info)
-                        end
+                        StarWars.print_info(info)
                     else
                         if input == 'back'
                             status = true
