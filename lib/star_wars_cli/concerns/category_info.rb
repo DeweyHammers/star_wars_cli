@@ -96,7 +96,7 @@ module Information
 
     def user_commands
         puts "--------------------------"
-        puts "Please enter a new moive number or 'list' to to see names again or 'back' to go back or 'exit' to exit"
+        puts "Please enter a new number or 'list' to to see names again or 'back' to go back or 'exit' to exit"
         print "Enter a command: "
     end
 end
