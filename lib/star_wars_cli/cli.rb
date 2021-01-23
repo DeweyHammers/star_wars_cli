@@ -1,7 +1,8 @@
 class Cli
     def call
-        puts "-----------------------------"
-        puts "Welcome! This is where you can find all info on everyhting Star Wars!"
+        puts "---------------------------------------------------------------------------"
+        puts "| Welcome! This is where you can find all things on everyhting Star Wars! |"
+        puts "---------------------------------------------------------------------------"
         print_categorys()
         input = nil
         while input != "exit" 
@@ -49,22 +50,22 @@ class Cli
     end 
 
     def print_categorys
-        puts "-----------------------------"
-        puts "1. People"
-        puts "2. Planets"
-        puts "3. Films"
-        puts "4. Species"
-        puts "5. Vehicles"
-        puts "6. Starships"
-        puts "-----------------------------"
+        puts "---------------"
+        puts "|1. People    |"  
+        puts "|2. Planets   |" 
+        puts "|3. Films     |"   
+        puts "|4. Species   |"
+        puts "|5. Vehicles  |"
+        puts "|6. Starships |"
+        puts "---------------"
         puts "Choose a number from the category you would like to look up or 'exit' to leave the app."
         print "Enter a command: "
     end
     
     def print_category_names(list)
-        puts "-----------------------------"
+        puts "---------------------"
         puts list
-        puts "-----------------------------"
+        puts "---------------------"
         puts "Please enter a number to choose from the list of names or 'back' to go back or 'exit' to leave the app."
         print "Enter a command: "
     end

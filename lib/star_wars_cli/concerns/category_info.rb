@@ -1,23 +1,23 @@
 module Information
     def print_person_info(person)
-        puts "-----------------------------"
-        puts "Person Information"
-        puts "-----------------------------"
+        puts "--------------------------"
+        puts "|   Person Information   |"  
+        puts "--------------------------"
         puts "Name: #{person.name}"
         puts "Height: #{person.height}" 
         puts "Mass: #{person.mass}"
         puts "Hair color: #{person.hair_color}"
         puts "Skin color: #{person.skin_color}"
-        puts "Eye color: #{person.eye_color}"
+        puts "Eye color: #{person.eye_color} "
         puts "Birth year: #{person.birth_year}"
         puts "Gender: #{person.gender}"
         user_commands()
     end
     
     def print_planet_info(planet)
-        puts "-----------------------------"
-        puts "Planet Information"
-        puts "-----------------------------"
+        puts "--------------------------"
+        puts "|   Planet Information   |"
+        puts "--------------------------"
         puts "Name: #{planet.name}"
         puts "Rotation period: #{planet.rotation_period}"
         puts "Diameter: #{planet.diameter}"
@@ -30,9 +30,9 @@ module Information
     end
 
     def print_film_info(film)
-        puts "-----------------------------"
-        puts "Movie Information"
-        puts "-----------------------------"
+        puts "--------------------------"
+        puts "|    Movie Information   |" 
+        puts "--------------------------"
         puts "Name: #{film.title}"
         puts "Episode: #{film.episode_id}"
         puts "Director: #{film.director}"
@@ -42,9 +42,9 @@ module Information
     end
 
     def print_specie_info(specie)
-        puts "-----------------------------"
-        puts "Specie Information"
-        puts "-----------------------------"
+        puts "--------------------------"
+        puts "|   Specie Information   |"
+        puts "--------------------------"
         puts "Name: #{specie.name}"
         puts "Classification: #{specie.classification}"
         puts "Designation: #{specie.designation}"
@@ -57,9 +57,9 @@ module Information
     end
 
     def print_vehicle_info(vehicle)
-        puts "-----------------------------"
-        puts "Vehicle Information"
-        puts "-----------------------------"
+        puts "--------------------------"
+        puts "|   Vehicle Information  |"
+        puts "--------------------------"
         puts "Name: #{vehicle.name}"
         puts "Model: #{vehicle.model}"
         puts "Manufacturer: #{vehicle.manufacturer}"
@@ -75,9 +75,9 @@ module Information
     end
 
     def print_starship_info(starship)
-        puts "-----------------------------"
-        puts "Starship Information"
-        puts "-----------------------------"
+        puts "--------------------------"
+        puts "|  Starship Information  |"
+        puts "--------------------------"
         puts "Name: #{starship.name}"
         puts "Model: #{starship.model}"
         puts "Manufacturer: #{starship.manufacturer}"
@@ -95,7 +95,7 @@ module Information
     end
 
     def user_commands
-        puts "-----------------------------"
+        puts "--------------------------"
         puts "Please enter a new moive number or 'list' to to see names again or 'back' to go back or 'exit' to exit"
         print "Enter a command: "
     end
