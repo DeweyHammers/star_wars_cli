@@ -1,5 +1,5 @@
 class Planets
-    attr_reader :num
+    attr_accessor :num
 
     @@all = []
 
@@ -8,6 +8,7 @@ class Planets
             self.class.attr_accessor(key)
             self.send(("#{key}="), value)
         end
+        @num = num
         save()
     end
 

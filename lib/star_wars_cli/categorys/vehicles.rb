@@ -1,5 +1,5 @@
 class Vehicles
-    attr_reader :num
+    attr_accessor :num
 
     @@all = []
 
@@ -8,6 +8,7 @@ class Vehicles
             self.class.attr_accessor(key)
             self.send(("#{key}="), value)
         end
+        @num = num
         save()
     end
 

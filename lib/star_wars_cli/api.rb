@@ -4,7 +4,7 @@ class Api
     def self.save_people
         url_index = 1
         num_index = 1
-        while index < 10
+        while url_index < 10
             page = HTTParty.get("#{URL}people/?page=#{url_index}")
             page.map do |key, value|
                 if value.is_a?(Array)
@@ -21,73 +21,93 @@ class Api
     end
 
     def self.save_planets
-        index = 1
-        while index < 7
-            page = HTTParty.get("#{URL}planets/?page=#{index}")
+        url_index = 1
+        num_index = 1
+        while url_index < 7
+            page = HTTParty.get("#{URL}planets/?page=#{url_index}")
             page.map do |key, value|
                 if value.is_a?(Array)
                     value.map do |hash|
-                        Planets.new(hash)
+                        planet = Planets.new(hash)
+                        planet.num = num_index
+                        num_index += 1
+                        planet
                     end
                 end
             end
-            index += 1
+            url_index += 1
         end
     end
 
     def self.save_films
+        num_index = 1
         page = HTTParty.get("#{URL}films/")
         page.map do |key, value|
             if value.is_a?(Array)
                 value.map do |hash|
-                    Films.new(hash)
+                    film = Films.new(hash)
+                    film.num = num_index
+                    num_index += 1
+                    film
                 end
             end
         end
     end
 
     def self.save_species
-        index = 1
-        while index < 5
-            page = HTTParty.get("#{URL}species/?page=#{index}")
+        url_index = 1
+        num_index = 1
+        while url_index < 5
+            page = HTTParty.get("#{URL}species/?page=#{url_index}")
             page.map do |key, value|
                 if value.is_a?(Array)
                     value.map do |hash|
-                        Species.new(hash)
+                        specie = Species.new(hash)
+                        specie.num = num_index
+                        num_index += 1
+                        specie
                     end
                 end
             end
-            index += 1
+            url_index += 1
         end
     end
 
     def self.save_vehicles
-        index = 1
-        while index < 5
-            page = HTTParty.get("#{URL}vehicles/?page=#{index}")
+        url_index = 1
+        num_index = 1
+        while url_index < 5
+            page = HTTParty.get("#{URL}vehicles/?page=#{url_index}")
             page.map do |key, value|
                 if value.is_a?(Array)
                     value.map do |hash|
-                        Vehicles.new(hash)
+                        vechicle = Vehicles.new(hash)
+                        vechicle.num = num_index
+                        num_index += 1
+                        vechicle
                     end
                 end
             end
-            index += 1
+            url_index += 1
         end
     end
 
     def self.save_starships
-        index = 1
-        while index < 5
-            page = HTTParty.get("#{URL}starships/?page=#{index}")
+        url_index = 1
+        num_index = 1
+        while url_index < 5
+            page = HTTParty.get("#{URL}starships/?page=#{url_index}")
             page.map do |key, value|
                 if value.is_a?(Array)
                     value.map do |hash|
-                        Starships.new(hash)
+                        starship = Starships.new(hash)
+                        starship.num = num_index
+                        num_index += 1
+                        starship
                     end
                 end
             end
-            index += 1
+            url_index += 1
         end
     end
 end

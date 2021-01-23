@@ -56,31 +56,31 @@ class StarWars
             end
         when 'planet'
             Planets.all.map do |planet|
-                if planet.url == "http://swapi.dev/api/planets/#{input}/"
+                if planet.num == input.to_i
                     info = planet
                 end
             end
         when 'film'
             Films.all.map do |film| 
-                if film.url == "http://swapi.dev/api/films/#{input}/"
+                if film.num == input.to_i
                     info = film
                 end
             end
         when 'specie'
             Species.all.map do |specie| 
-                if specie.url == "http://swapi.dev/api/species/#{input}/"
+                if specie.num == input.to_i
                     info = specie
                 end
             end
         when 'vehicle'
             Vehicles.all.map do |vehicle| 
-                if vehicle.url == "http://swapi.dev/api/vehicles/#{index}/"
+                if vehicle.num == input.to_i
                     info = vehicle
                 end
             end
         when 'starship'
             Starships.all.map do |starship| 
-                if starship.url == "http://swapi.dev/api/starships/#{input}/"
+                if starship.num == input.to_i
                     info = starship
                 end
             end
