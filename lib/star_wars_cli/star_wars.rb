@@ -66,37 +66,37 @@ class StarWars
         case @status
         when 'People'
             People.all.map do |person|
-                if person.num_index == input.to_i
+                if person.num_index == index
                     info = person
                 end
             end
         when 'Planets'
             Planets.all.map do |planet|
-                if planet.num_index == input.to_i
+                if planet.num_index == index
                     info = planet
                 end
             end
         when 'Films'
             Films.all.map do |film| 
-                if film.num_index == input.to_i
+                if film.num_index == index
                     info = film
                 end
             end
         when 'Species'
             Species.all.map do |specie| 
-                if specie.num_index == input.to_i
+                if specie.num_index == index
                     info = specie
                 end
             end
         when 'Vehicles'
             Vehicles.all.map do |vehicle| 
-                if vehicle.num_index == input.to_i
+                if vehicle.num_index == index
                     info = vehicle
                 end
             end
         when 'Starships'
             Starships.all.map do |starship| 
-                if starship.num_index == input.to_i
+                if starship.num_index == index
                     info = starship
                 end
             end
