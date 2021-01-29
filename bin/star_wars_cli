@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 require "bundler/setup"
-require "./lib/star_wars_cli"
+require "star_wars_cli"
 
 Cli.new.call
