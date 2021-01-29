@@ -6,9 +6,9 @@ class Api
         num_index = 1
         while url_index < 10
             page = HTTParty.get("#{URL}people/?page=#{url_index}")
-            page.map do |key, value|
+            page.each do |key, value|
                 if value.is_a?(Array)
-                    value.map do |hash|
+                    value.each do |hash|
                         hash['num_index'] = num_index
                         People.new(hash)
                         num_index += 1
@@ -24,9 +24,9 @@ class Api
         num_index = 1
         while url_index < 7
             page = HTTParty.get("#{URL}planets/?page=#{url_index}")
-            page.map do |key, value|
+            page.each do |key, value|
                 if value.is_a?(Array)
-                    value.map do |hash|
+                    value.each do |hash|
                         hash['num_index'] = num_index
                         Planets.new(hash)
                         num_index += 1
@@ -40,9 +40,9 @@ class Api
     def self.save_films
         num_index = 1
         page = HTTParty.get("#{URL}films/")
-        page.map do |key, value|
+        page.each do |key, value|
             if value.is_a?(Array)
-                value.map do |hash|
+                value.each do |hash|
                     hash['num_index'] = num_index
                     Films.new(hash)
                     num_index += 1
@@ -56,9 +56,9 @@ class Api
         num_index = 1
         while url_index < 5
             page = HTTParty.get("#{URL}species/?page=#{url_index}")
-            page.map do |key, value|
+            page.each do |key, value|
                 if value.is_a?(Array)
-                    value.map do |hash|
+                    value.each do |hash|
                         hash['num_index'] = num_index
                         Species.new(hash)
                         num_index += 1
@@ -74,9 +74,9 @@ class Api
         num_index = 1
         while url_index < 5
             page = HTTParty.get("#{URL}vehicles/?page=#{url_index}")
-            page.map do |key, value|
+            page.each do |key, value|
                 if value.is_a?(Array)
-                    value.map do |hash|
+                    value.each do |hash|
                         hash['num_index'] = num_index
                         Vehicles.new(hash)
                         num_index += 1
@@ -92,9 +92,9 @@ class Api
         num_index = 1
         while url_index < 5
             page = HTTParty.get("#{URL}starships/?page=#{url_index}")
-            page.map do |key, value|
+            page.each do |key, value|
                 if value.is_a?(Array)
-                    value.map do |hash|
+                    value.each do |hash|
                         hash['num_index'] = num_index
                         Starships.new(hash)
                         num_index += 1
