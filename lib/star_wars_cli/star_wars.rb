@@ -53,17 +53,17 @@ class StarWars
         index = input.to_i
         case @status
         when 'People'
-            People.all.each {|person| person.num_index == index ? info = person : info}
+            People.all.each {|person| info = person if person.num_index == index}
         when 'Planets'
-            Planets.all.each {|planet| planet.num_index == index ? info = planet : info}
+            Planets.all.each {|planet| info = planet if planet.num_index == index}
         when 'Films'
-            Films.all.each {|film| film.num_index == index ? info = film : info}
+            Films.all.each {|film| info = film if film.num_index == index}
         when 'Species'
-            Species.all.each {|specie| specie.num_index == index ? info = specie : info}
+            Species.all.each {|specie| info = specie if specie.num_index == index}
         when 'Vehicles'
-            Vehicles.all.each {|vehicle| vehicle.num_index == index ? info = vehicle : info}
+            Vehicles.all.each {|vehicle| info = vehicle if vehicle.num_index == index}
         when 'Starships'
-            Starships.all.each {|starship| starship.num_index == index ? info = starship : info}
+            Starships.all.each {|starship| info = starship if starship.num_index == index}
         end
         info
     end
