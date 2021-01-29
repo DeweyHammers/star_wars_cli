@@ -9,54 +9,42 @@ class StarWars
                 Cli.loading
                 Api.save_people()
             end 
-            People.all.map.with_index(1) do |person, index| 
-                "#{index}. #{person.name}"
-            end
+            People.all.map.with_index(1) {|person, index| "#{index}. #{person.name}"}
         when "2"
             @status = 'Planets'
             if Planets.all.length == 0
                 Cli.loading
                 Api.save_planets() 
             end
-            Planets.all.map.with_index(1) do |planet, index| 
-                "#{index}. #{planet.name}"
-            end
+            Planets.all.map.with_index(1) {|planet, index| "#{index}. #{planet.name}"}
         when "3"
             @status = 'Films'
             if Films.all.length == 0
                 Cli.loading
                 Api.save_films()
             end 
-            Films.all.map.with_index(1) do |film, index|
-                "#{index}. #{film.title}"
-            end
+            Films.all.map.with_index(1) {|film, index| "#{index}. #{film.title}"}
         when "4"
             @status = 'Species'
             if Species.all.length == 0
                 Cli.loading
                 Api.save_species()
             end 
-            Species.all.map.with_index(1) do |specie, index| 
-                "#{index}. #{specie.name}"
-            end
+            Species.all.map.with_index(1) {|specie, index| "#{index}. #{specie.name}"}
         when "5"
             @status = 'Vehicles'
             if Vehicles.all.length == 0
                 Cli.loading
                 Api.save_vehicles()
             end 
-            Vehicles.all.map.with_index(1) do |vehicle, index| 
-                "#{index}. #{vehicle.name}"
-            end
+            Vehicles.all.map.with_index(1) {|vehicle, index| "#{index}. #{vehicle.name}"}
         when "6"
             @status = 'Starships'
             if Starships.all.length == 0
                 Cli.loading
                 Api.save_starships()
             end 
-            Starships.all.map.with_index(1) do |starship, index| 
-                "#{index}. #{starship.name}"
-            end
+            Starships.all.map.with_index(1) {|starship, index| "#{index}. #{starship.name}"}
         end
     end
 
@@ -65,41 +53,17 @@ class StarWars
         index = input.to_i
         case @status
         when 'People'
-            People.all.map do |person|
-                if person.num_index == index
-                    info = person
-                end
-            end
+            People.all.each {|person| person.num_index == index ? info = person : info}
         when 'Planets'
-            Planets.all.map do |planet|
-                if planet.num_index == index
-                    info = planet
-                end
-            end
+            Planets.all.each {|planet| planet.num_index == index ? info = planet : info}
         when 'Films'
-            Films.all.map do |film| 
-                if film.num_index == index
-                    info = film
-                end
-            end
+            Films.all.each {|film| film.num_index == index ? info = film : info}
         when 'Species'
-            Species.all.map do |specie| 
-                if specie.num_index == index
-                    info = specie
-                end
-            end
+            Species.all.each {|specie| specie.num_index == index ? info = specie : info}
         when 'Vehicles'
-            Vehicles.all.map do |vehicle| 
-                if vehicle.num_index == index
-                    info = vehicle
-                end
-            end
+            Vehicles.all.each {|vehicle| vehicle.num_index == index ? info = vehicle : info}
         when 'Starships'
-            Starships.all.map do |starship| 
-                if starship.num_index == index
-                    info = starship
-                end
-            end
+            Starships.all.each {|starship| starship.num_index == index ? info = starship : info}
         end
         info
     end
